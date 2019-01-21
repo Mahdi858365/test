@@ -1,0 +1,158 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+<!-- 
+
+Hello Camper!
+
+For now, the test suite only works in Chrome! Please read the README below in the JS Editor before beginning. Feel free to delete this message once you have read it. Good luck and Happy Coding! 
+
+- The freeCodeCamp Team 
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Tamma" rel="stylesheet">
+	<meta charset="UTF-8">
+	<title>Survey form</title>
+	<style>
+		body {
+			display: flex;	
+			flex-direction: column;
+			align-items: center;
+			background-color: #ece9ec;
+			font-family: 'Baloo Tamma', cursive;
+			}
+
+		header {
+			/*background-color: blue;*/
+			text-align: center;
+		}
+
+		fieldset {
+			background-color: azure;
+			border-color: #f5ecec;
+			border-width: 1px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
+
+		legend {
+			background-color: azure;			
+			font-size: 18px;
+			margin-bottom: 5px;
+			padding-bottom: 10px;
+			text-transform: capitalize;
+		}
+
+		#submit {
+		  width: 70px;
+		  height: 30px;
+		  background-color: #59ace0;
+		  border-radius: 3px;
+		  color: white;
+		  margin-left: 45%;
+		  margin-right: 45%;
+		  font-weight: bold;
+		}
+
+		#submit:hover {		  
+		  color: black;		  
+		  box-shadow: 1px 1px 3px gray;
+		}
+
+		h1 {
+			margin: 15px auto 0 auto;			
+			text-shadow: 1px 1px 2px gray, 0 0 5px gray;
+		}
+
+		#description {
+			margin-top: auto;
+		}
+
+		#personal {
+			margin-top: 20px;
+		}
+
+		#number {
+			width: 150px;		}
+
+	</style>
+</head>
+<body>
+	<header>
+		<div id="title-container">
+			<h1 id="title">Survey Form</h1>
+			<p id="description">Let us know how we can improve freeCodeCamp</p>
+		</div>
+	</header>	
+	<form action="" id="survey-form">
+		<fieldset id="personal">
+			<legend>personal information</legend>
+			<label for="name-label" id="name-label">* Name: </label>
+			<input type="text" id="name" name="name" placeholder="Enter Your Name" required><br>
+
+			<label for="lastname-label" id="lastname-label">* LastName: </label>
+			<input type="text" id="lastname" name="lastname" placeholder="Enter Your LastName" required><br>
+
+			<label for="email-label" id="email-label">* Email: </label>
+			<input type="email" id="email" name="email" placeholder="Enter Your Email" required><br>
+
+			<label for="number-label" id="number-label">* Age: </label>
+			<input type="number" id="number" name="number" min="1" max="120" placeholder="Enter Your Age" required><br><br>
+
+			<label for="dropdown">Which option best describes your current role? </label>
+			<select name="dropdown" id="dropdown">
+				<option value="student">Student</option>
+				<option value="full-time">Full Time Job</option>
+				<option value="part-time">Part Time Job</option>
+				<option value="not-to-say">Prefer Not To Say</option>
+				<option value="other">Other</option>
+			</select>
+		</fieldset>
+		<br>
+		<fieldset id="recommand">
+			<legend>* How likely is that you would recommend freeCodeCamp to a friend? </legend>
+			<label for="recommand"></label>
+			<input type="radio" name="recommand" value="definitely" checked>Definitely
+			<input type="radio" name="recommand" value="maybe">Maybe
+			<input type="radio" name="recommand" value="notsure">Not sure
+		</fieldset>
+		<br>
+		<label for="mostlike">What do you like most in FCC: </label>
+		<select name="like" id="mostlike">
+			<option disabled selected value>Select An Option</option>
+			<option value="challenges">Challenges</option>
+			<option value="community">Community</option>
+			<option value="projects">Projects</option>
+			<option value="open-source">Open Source</option>
+		</select>
+		<br><br>
+		<fieldset id="improve">
+			<legend>Things that should be improved in the future
+(Check all that apply): </legend>
+			<ul id="preferences" style="list-style: none;">
+	          <li class="checkbox"><label><input name="prefer" value="1" type="checkbox" class="userRatings">Front-end Projects</label></li>
+	          <li class="checkbox"><label><input name="prefer" value="2" type="checkbox" class="userRatings">Back-end Projects</label></li>
+	          <li class="checkbox"><label><input name="prefer" value="3" type="checkbox" class="userRatings">Data Visualization</label></li>
+	          <li class="checkbox"><label><input name="prefer" value="4" type="checkbox" class="userRatings">Challenges</label></li>
+	          <li class="checkbox"><label><input name="prefer" value="5" type="checkbox" class="userRatings">Open Source Community</label></li>
+	          <li class="checkbox"><label><input name="prefer" value="6" type="checkbox" class="userRatings">Gitter help rooms</label></li>
+	          <li class="checkbox"><label><input name="prefer" value="7" type="checkbox" class="userRatings">Videos</label></li>
+	          <li class="checkbox"><label><input name="prefer" value="8" type="checkbox" class="userRatings">City Meetups</label></li>
+	          <li class="checkbox"><label><input name="prefer" value="9" type="checkbox" class="userRatings">Wiki</label></li>
+	          <li class="checkbox"><label><input name="prefer" value="10" type="checkbox" class="userRatings">Forum</label></li>
+	          <li class="checkbox"><label><input name="prefer" value="11" type="checkbox" class="userRatings">Additional Courses</label></li>
+	        </ul>
+		</fieldset>
+		<br>
+		<fieldset id="textarea">
+			<legend>Any Comments or Suggestions? </legend>
+			<textarea name="comments" id="comment" cols="50" rows="10" placeholder="Enter your Comment Here . . ."></textarea>
+		</fieldset>	
+		<br>
+		<input type="submit" id="submit">
+	</form>
+	
+	
+</body>
+</html>
